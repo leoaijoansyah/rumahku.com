@@ -15,6 +15,9 @@
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
+    <!-- Morris -->
+    <link type="text/css" rel="stylesheet" href="css/morris.css" />
+
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
@@ -61,6 +64,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
                     <h1 class="white-text">Detail Rumah Minimalis</h1>
+                    <h2 style="color:white;margin-bottom: 0px;">Rumah Tipe 36A</h2>
                 </div>
             </div>
         </div>
@@ -79,8 +83,6 @@
 
                 <!-- aside blog -->
                 <div id="aside" class="col-md-3">
-
-                    <h3>Rumah Tipe 36A</h3>
                     <h6><b>Rumah</b></h6>
                     <li>Luas Lahan : 60 <i class="fa fa-check text-success"></i></li>
                     <li>Atap : Segitiga <i class="fa fa-check text-success"></i></li>
@@ -103,15 +105,19 @@
                     <h6><b>Biaya</b></h6>
                     <li>Tafsiran Harga : 75-100 <i class="fa fa-check text-success"></i></li>
                     <hr>
-
                 </div>
                 <!-- /aside blog -->
 
                 <!-- main blog -->
-                <div id="main" class="col-md-9">
+                <div id="main" class="col-md-6">
 
                     <img src="./img/blog01.jpg" alt="">
 
+                </div>
+                <div id="main" class="col-md-3">
+                    <div class="white-box">
+                        <div id="morris-donut-chart"></div>
+                    </div>
                 </div>
                 <!-- /main blog -->
             </div>
@@ -181,6 +187,30 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+
+    <!--Morris JavaScript -->
+    <script src="js/raphael-min.js"></script>
+    <script src="js/morris.js"></script>
+    <script>
+        // Morris donut chart
+        
+    Morris.Donut({
+        element: 'morris-donut-chart',
+        data: [{
+            label: "Download Sales",
+            value: 12,
+
+        }, {
+            label: "In-Store Sales",
+            value: 30
+        }, {
+            label: "Mail-Order Sales",
+            value: 20
+        }],
+        resize: true,
+        colors:['#99d683', '#13dafe', '#6164c1']
+    });
+    </script>
 
 </body>
 
